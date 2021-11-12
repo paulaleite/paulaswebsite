@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://kit.fontawesome.com/e3b9a57937.js" crossorigin="anonymous"></script>
+
+        <script src="./javascript/data.js"></script>
+        <script src="./javascript/displayPortfolio.js"></script>
+        <script src="./javascript/localization.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <link rel="shortcut icon" href="./assets/paulaIcon.png"/>
+        <title>Paula Torales Leite</title>
+    </head>
+    <body id="top" data-spy="scroll" data-target=".navbar">
+
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-3">
+                    <li class="nav-item">
+                        <a id="navAboutMe" class="nav-link scroll" href="#top">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="navProjects" class="nav-link scroll" href="#portfolio">Portfolio</a>
+                    </li>            
+                </ul>
+            </div>
+        </nav>
+
+        <!-- About me -->
+        <section id="intro" class="row align-items-center min-vh-100">
+            <div class="col-sm-11 col-md-4 mx-4 mb-3">
+                <img src="./assets/imagemPaula.jpg" alt="Picture of Paula Torales Leite" class="img rounded-circle img-responsive img-thumbnail" width="600rem">
+            </div>
+            <div class="col-sm-11 col-md-7">
+                <h1 id="introTitle" class="mb-3 px-3">I'm Paula Torales Leite and I’m an iOS Developer.</h1>
+                <p id="introP1" class="mb-2 px-3">I strive to build efficient, clean and accessible apps through user-centric design and am currently an iOS Mentor at Apple Developer Academy | Mackenzie.</p>
+                <p id="introP2" class="mb-2 px-3">In addition to my development work, I’m also an avid reader, sharing my love through GoodReads. I’m also a part of a collective called Zero e Umas, which strives to capacite women in the tech world, in Brazil.</p>
+                <p id="introP3" class="mb-2 px-3">Come meet some of my work and don’t forget to get in contact with me if you have any questions.</p>
+                <div class="px-3">
+                    <!-- <a href="https://www.linkedin.com/in/paulatleite/"><img src="./assets/buttons/LinkedIN.png"  class="img-link float-left"></a> -->
+                    <a href="https://www.linkedin.com/in/paulatleite/"><i class="fab fa-linkedin-in mx-2 h4 social-links"></i></a>
+                    <!-- <a href="https://github.com/paulaleite"><img src="./assets/buttons/Github.png"  class="img-link spacing float-left"></a> -->
+                    <a href="https://github.com/paulaleite"><i class="fab fa-github mx-2 h4 social-links"></i></a>
+                    <!-- <a href="https://medium.com/@paula.t.leite"><img src="./assets/buttons/Medium.png"  class="img-link spacing float-left"></a> -->
+                    <a href="https://medium.com/@paula.t.leite"><i class="fab fa-medium mx-2 h4 social-links"></i></a>
+                    <!-- <a href="mailto:paula.t.leite@icloud.com" target="_blank" class="clear"><img src="./assets/buttons/Email.png"  class="img-link spacing float-left"></a> -->
+                    <a href="mailto:paula.t.leite@icloud.com" target="_blank" class="clear"><i class="fas fa-envelope mx-2 h4 social-links"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="container">
+            <h1 style="padding: 8vh 0;"></h1>
+            <script>
+                displayPortfolio();
+            </script>
+        </section>
+
+        <script>
+
+            $(document).ready(function() {
+                $("a").on('click', function(event) {
+                    if (this.hash !== "" && !this.className.includes("navbar-toggler")) {
+                        event.preventDefault();
+        
+                        var hash = this.hash;
+        
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top - $("nav").height()
+                        }, 800, function() {
+                            window.location.hash = hash - $("nav").height();
+                        });
+                    }
+                });
+            });
+
+            const links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                if (!links[i].className.includes("nav-link")) {
+                    links[i].target = "_blank";
+                }
+            }
+        </script>
+
+        <!-- Footer -->
+        <footer id="footer">
+
+            <h6 class="col text-center"> Copyright © 2020 Paula Torales Leite </h6>
+            <h6 class="col text-center"> All rights reserverd </h6>
+  
+        </footer>
+    </body>
+</html>

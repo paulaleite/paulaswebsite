@@ -1,0 +1,154 @@
+:root {
+    --background: rgba(245, 245, 245, 1);
+    --backgroundCard: #FDFDFD;
+    --title: #000000;
+    --subtitle: #222222;
+    --text: #353835; 
+    --action: #D4A562;
+    --activeColor: white;
+    --info: #EFEFEF;
+    --shadow: 4px 4px 20px rgba(53, 56, 53, 0.15);
+    --radius: 1rem;
+    --myGray: #767676;
+    --lightGrey: #8E8E8E;
+}
+
+html,
+body {
+    background-color: var(--background);
+    font-family: Montserrat;
+}
+
+#intro {
+    height: 85vh;
+}
+
+#portfolio {
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--title);
+}
+
+h2, h3, h4, h5, h6 {
+    color: var(--sub);
+}
+
+.social-links {
+    color: var(--myGray);
+}
+
+.social-links:hover {
+    text-decoration: none;
+    color: var(--lightGrey);
+}
+
+.noPadding {
+    padding: 0 !important;
+}
+
+p {
+    color: var(--text);
+}
+
+.navbar {
+    background-color: var(--background) !important;
+}
+
+.nav-link {
+    margin: 0 20px 0 20px;
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+}
+
+#contact {
+    background: var(--action);
+    border-color: var(--action);
+    border-radius: 50px;
+    color: var(--background);
+}
+
+#contact:hover {
+    background: var(--title);
+    border-color: var(--title);
+}
+
+.img {
+
+    filter: drop-shadow(var(--shadow));
+}
+
+.height100 {
+    height: 100%;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.card-column {
+    padding-bottom: 3rem;
+}
+
+.card {
+    box-shadow: var(--shadow);
+    background-color: var(--backgroundCard);
+    border-radius: var(--radius);
+}
+
+.card-footer {
+    background-color: var(--backgroundCard);
+    border-radius: 10rem !important;
+}
+
+.card-img-top {
+    border-radius: var(--radius) var(--radius) 0 0 !important;
+}
+
+.badge-light {
+    background-color: var(--info);
+}
+
+.img-link {
+    height: 4vh;
+}
+
+.img-link.spacing {
+    margin-left: 1rem;
+}
+
+.img-link:hover {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.text-group {
+    margin-top: 1.5rem;
+}
+
+.modal-content {
+    border-radius: 0.5rem;
+    background-color: var(--background);
+}
+
+.modal-title {
+    color: var(--title);
+}
+
+.active {
+    color: var(--activeColor) !important;
+    background-color:var(--action);
+    border-radius: 25px;
+}
